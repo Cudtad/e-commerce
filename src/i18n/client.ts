@@ -9,7 +9,8 @@ import {
 import { useCookies } from 'react-cookie';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import { getOptions, languages, cookieName } from './settings';
+import { getOptions, languages, cookieName, fallbackLng } from './settings';
+import useLang from '@/hooks/useLang';
 
 const runsOnServerSide = typeof window === 'undefined';
 
@@ -31,7 +32,7 @@ i18next
     preload: runsOnServerSide ? languages : [],
   });
 
-export function useTranslation(lng: any, ns: any, options: any) {
+export function useTranslation(lng: any, ns: any, options?: any) {
   const [cookies, setCookie] = useCookies([cookieName]);
   const ret = useTranslationOrg(ns, options);
   const { i18n } = ret;
@@ -56,4 +57,9 @@ export function useTranslation(lng: any, ns: any, options: any) {
     }, [lng, cookies.i18next]);
   }
   return ret;
+}
+
+export function useTranslationClient(ns?: any, options?: any) {
+  const lang = useLang();
+  return useTranslation(lang || fallbackLng, ns, options);
 }
