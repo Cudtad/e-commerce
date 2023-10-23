@@ -1,0 +1,7 @@
+.input-animation:focus + .focus-input {
+    width: 100%;
+}
+
+.focus-input {
+    transition: all 0.2s ease-in;
+}

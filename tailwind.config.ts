@@ -8,9 +8,30 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '540px',
+        md: '768px',
+        lg: '992px',
+        xl: '1200px',
+        '2xl': '1440px',
+      },
+      colors: {
+        black: {
+          text: '#333333',
+          DEFAULT: '#000',
+        },
+        gray: {
+          1: '#b2b2b2',
+          2: '#666666',
+        },
+        primary: {
+          DEFAULT: '#717fe0',
+        },
+      },
       fontFamily: {
         'sf-pro': ['var(--font-sfpro)'],
         'sf-pro-expanded': ['var(--font-sfpro-expanded)'],
+        playfair: ['var(--font-playfair)'],
       },
     },
   },
