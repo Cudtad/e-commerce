@@ -22,6 +22,7 @@ const config: Config = {
         },
         gray: {
           1: '#b2b2b2',
+          2: '#666666',
         },
         primary: {
           DEFAULT: '#717fe0',
@@ -30,6 +31,7 @@ const config: Config = {
       fontFamily: {
         'sf-pro': ['var(--font-sfpro)'],
         'sf-pro-expanded': ['var(--font-sfpro-expanded)'],
+        playfair: ['var(--font-playfair)'],
       },
     },
   },

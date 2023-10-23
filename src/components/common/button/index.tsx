@@ -5,7 +5,7 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   types: 'primary' | 'secondary' | 'text';
-  type: 'button' | 'submit' | 'reset' | undefined;
+  type?: 'button' | 'submit' | 'reset' | undefined;
   size: 'sm' | 'mb' | 'xl';
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
@@ -23,8 +23,10 @@ export default function ButtonCustom({
       type={type}
       className={clsx(
         {
-          'bg-primary text-white hover:bg-white hover:text-primary': types === 'primary',
+          'bg-primary text-white hover:bg-white hover:text-primary':
+            types === 'primary',
           'font-semibold text-lg': size === 'mb',
+          'font-medium text-base': size === 'sm',
         },
         className,
       )}
