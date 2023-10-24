@@ -212,3 +212,37 @@
     opacity: 1;
   }
 }
+
+.preview-overlay {
+  display: none;
+  animation: showPreview 0.3s ease-in;
+  div {
+    animation-name: hideAndShow, scale;
+    animation-duration: 0s, 0.5s;
+    animation-timing-function: ease-in, ease-in;
+    animation-fill-mode: forwards, forwards;
+    animation-iteration-count: 1, 1;
+    animation-delay: 0s, 0s;
+  }
+  span {
+    animation-name: hideAndShow, bottomIn;
+    animation-duration: 0s, 0.5s;
+    animation-timing-function: ease-in, ease-in;
+    animation-fill-mode: forwards, forwards;
+    animation-iteration-count: 1, 1;
+    animation-delay: 0s, 0.2s;
+  }
+}
+
+.preview:hover .preview-overlay {
+  display: block;
+}
+
+@keyframes showPreview {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

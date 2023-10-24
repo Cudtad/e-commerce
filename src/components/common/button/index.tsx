@@ -8,6 +8,8 @@ type Props = {
   type?: 'button' | 'submit' | 'reset' | undefined;
   size: 'sm' | 'mb' | 'xl';
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
 };
 
 export default function ButtonCustom({
@@ -17,14 +19,18 @@ export default function ButtonCustom({
   types,
   type,
   size,
+  prefix,
+  suffix,
 }: Props) {
   return (
     <button
       type={type}
       className={clsx(
+        'flex items-center',
         {
           'bg-primary text-white hover:bg-white hover:text-primary':
             types === 'primary',
+          'bg-transparent border border-gray-4': types === 'text',
           'font-semibold text-lg': size === 'mb',
           'font-medium text-base': size === 'sm',
         },
@@ -32,7 +38,9 @@ export default function ButtonCustom({
       )}
       onClick={onClick}
     >
+      {prefix}
       {children}
+      {suffix}
     </button>
   );
 }

@@ -23,6 +23,8 @@ const config: Config = {
         gray: {
           1: '#b2b2b2',
           2: '#666666',
+          3: '#888',
+          4: '#e6e6e6',
         },
         primary: {
           DEFAULT: '#717fe0',

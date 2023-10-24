@@ -10,7 +10,7 @@ export default function SignIn() {
   return (
     <Link
       href={`/${lang}/sign-in`}
-      className="flex justify-center items-center gap-2 cursor-pointer text-black-text font-semibold"
+      className="flex justify-center items-center gap-2 cursor-pointer text-black-text font-semibold hover:text-primary"
     >
       <UserOutlined />
       Sign in

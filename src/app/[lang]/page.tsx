@@ -11,7 +11,7 @@ export default async function Home({ params: { lang } }: Props) {
   const { t } = await useTranslation(lang, 'home');
 
   return (
-    <main className="w-full h-screen relative">
+    <main className="">
       <HomePage />
     </main>
   );

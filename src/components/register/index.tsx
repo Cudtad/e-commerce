@@ -1,16 +1,25 @@
 'use client';
 
+import { register } from '@/services/auth.api';
 import { AuthRegisterPayload } from '@/types/auth';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, message } from 'antd';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 export default function RegisterPage() {
   const { lang } = useParams();
   const [form] = Form.useForm();
+  const router = useRouter();
 
-  const onSubmit = (data: AuthRegisterPayload) => {
+  const onSubmit = async (data: AuthRegisterPayload) => {
     console.log(data);
+    try {
+      const res = await register(data);
+      message.success('Register successfully');
+      await router.push('/en/sign-in');
+    } catch (error) {
+      message.error(`Error: ${error}`);
+    }
   };
 
   return (
@@ -25,8 +34,8 @@ export default function RegisterPage() {
         onFinish={onSubmit}
       >
         <Form.Item
-          label="Name"
-          name="name"
+          label="Username"
+          name="username"
           rules={[
             {
               required: true,
