@@ -1,9 +1,55 @@
 'use client';
 
-import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
+import {
+  CaretLeftOutlined,
+  CaretRightOutlined,
+  FilterOutlined,
+  SearchOutlined,
+} from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import ButtonCustom from '../common/button';
 import './style.scss';
+import Thumbnail from '../common/thumbnail/Thumbnail';
+import Image from 'next/image';
+
+const dataThumbnail: ThumbnailProps[] = [
+  {
+    imageSrc:
+      'https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp',
+    title: 'Esprit Ruffle Shirt',
+    price: 16.64,
+  },
+  {
+    imageSrc:
+      'https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp',
+    title: 'Esprit Ruffle Shirt',
+    price: 16.64,
+  },
+  {
+    imageSrc:
+      'https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp',
+    title: 'Esprit Ruffle Shirt',
+    price: 16.64,
+  },
+  {
+    imageSrc:
+      'https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp',
+    title: 'Esprit Ruffle Shirt',
+    price: 16.64,
+  },
+  {
+    imageSrc:
+      'https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp',
+    title: 'Esprit Ruffle Shirt',
+    price: 16.64,
+  },
+  {
+    imageSrc:
+      'https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp',
+    title: 'Esprit Ruffle Shirt',
+    price: 16.64,
+  },
+];
 
 /* eslint-disable @next/next/no-img-element */
 export default function HomePage() {
@@ -116,6 +162,11 @@ export default function HomePage() {
               className="relative border cursor-pointer preview"
             >
               <img className="object-cover " src={preview.src || ''} />
+              {/* <Image
+                src={preview.src || ''}
+                alt="Banner Image"
+                className="object-cover "
+              /> */}
               <div className="absolute z-5 top-[15%] left-[7%]">
                 <h1 className="font-sf-pro-expanded font-bold text-2xl">
                   {preview.title}
@@ -146,11 +197,34 @@ export default function HomePage() {
               <div>Shoes</div>
               <div>Watches</div>
             </div>
-            <div>
-              <ButtonCustom size="sm" types="text">
+            <div className="flex items-center gap-2">
+              <ButtonCustom
+                size="sm"
+                types="text"
+                prefix={<FilterOutlined />}
+                className="gap-2 px-4 py-2"
+              >
                 Filter
               </ButtonCustom>
+              <ButtonCustom
+                size="sm"
+                types="text"
+                prefix={<SearchOutlined />}
+                className="gap-2 px-4 py-2"
+              >
+                Search
+              </ButtonCustom>
             </div>
+          </div>
+          <div className="pt-14 grid grid-cols-4 gap-x-4 gap-y-8">
+            {dataThumbnail.map((item: ThumbnailProps) => (
+              <Thumbnail
+                imageSrc={item.imageSrc}
+                title={item.title}
+                price={item.price}
+                className="col-span-1"
+              />
+            ))}
           </div>
         </div>
       </div>

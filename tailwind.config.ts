@@ -25,6 +25,8 @@ const config: Config = {
           2: '#666666',
           3: '#888',
           4: '#e6e6e6',
+          5: '#999',
+          6: '#666',
         },
         primary: {
           DEFAULT: '#717fe0',
