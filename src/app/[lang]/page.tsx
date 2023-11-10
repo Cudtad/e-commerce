@@ -11,8 +11,8 @@ export default async function Home({ params: { lang } }: Props) {
   const { t } = await useTranslation(lang, 'home');
 
   return (
-    <main className="">
-      <HomePage />
+    <main>
+      <HomePage lang={lang} />
     </main>
   );
 }

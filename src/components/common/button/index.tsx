@@ -30,6 +30,8 @@ export default function ButtonCustom({
         {
           'bg-primary text-white hover:bg-white hover:text-primary':
             types === 'primary',
+          'bg-white text-black-text hover:text-white hover:bg-black-text':
+            types === 'secondary',
           'bg-transparent border border-gray-4': types === 'text',
           'font-semibold text-lg': size === 'mb',
           'font-medium text-base': size === 'sm',

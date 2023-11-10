@@ -3,4 +3,5 @@ interface ThumbnailProps {
   imageSrc: string;
   title: string;
   price: number;
+  lang?: string;
 }

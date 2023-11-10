@@ -1,3 +1,6 @@
 {
-    "hello": "Hello"
+  "hello": "Hello",
+  "thumbnail": {
+    "quick_view": "Quick view"
+  }
 }

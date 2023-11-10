@@ -5,13 +5,20 @@ import { languages } from '@/i18n/settings';
 import clsx from 'clsx';
 import { sfProExpandedFont, sfProFont } from '@/config/fonts';
 import Layout from '@/components/common/layout';
-import { Playfair_Display } from 'next/font/google';
+import { Playfair_Display, Poppins } from 'next/font/google';
 
 export const playfair_display = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-playfair',
 });
+export const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: '400',
+});
+
 export const metadata: Metadata = {
   title: 'e-commerce',
   description: 'Shopping online',
@@ -33,7 +40,7 @@ export default function RootLayout({ children, params: { lang } }: Props) {
     <html
       lang={lang}
       dir={dir(lang)}
-      className={`${playfair_display.variable}`}
+      className={`${playfair_display.variable} ${poppins.variable}`}
     >
       <body
         className={clsx(

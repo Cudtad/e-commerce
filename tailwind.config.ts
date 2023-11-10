@@ -36,6 +36,7 @@ const config: Config = {
         'sf-pro': ['var(--font-sfpro)'],
         'sf-pro-expanded': ['var(--font-sfpro-expanded)'],
         playfair: ['var(--font-playfair)'],
+        poppins: ['var(--font-poppins)'],
       },
     },
   },
