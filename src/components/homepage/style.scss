@@ -91,7 +91,7 @@
 
 .e-commerce-slider {
   img {
-    animation: fadeIn 0.8s linear;
+    animation: fadeIn 0.8s ease-in;
   }
 }
 
@@ -244,5 +244,48 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+.thumbnail-animation {
+  button {
+    animation: bottomOutThumb 0.3s ease-out;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+    button {
+      bottom: 20%;
+      animation: bottomInThumb 0.3s ease-in;
+    }
+  }
+}
+
+@keyframes bottomInThumb {
+  from {
+    left: 50%;
+    transform: translate(-50%, 300%);
+    opacity: 0;
+  }
+  to {
+    left: 50%;
+    transform: translateX(-50%, 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes bottomOutThumb {
+  from {
+    left: 50%;
+    transform: translateX(-50%, 0);
+    bottom: 20%;
+    opacity: 1;
+  }
+  to {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    opacity: 0;
   }
 }

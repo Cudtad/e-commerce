@@ -18,14 +18,14 @@ export default function Thumbnail({
   const { t } = useTranslation(lang, 'home');
   return (
     <div className={clsx(className)}>
-      <div className="relative thumbnail-animation cursor-pointer">
+      <div className="relative thumbnail-animation cursor-pointer overflow-hidden">
         <img
           alt="Image Thumbnail"
-          className="object-cover aspect-auto"
+          className="object-cover aspect-auto transition-all duration-300 ease-in"
           src={imageSrc}
         />
         <ButtonCustom
-          className="px-5 py-2 rounded-full absolute bottom-0 hidden left-1/2 transform -translate-x-1/2 shadow-md"
+          className="px-5 py-2 rounded-full absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-[100%] shadow-md"
           types="secondary"
           size="sm"
         >
